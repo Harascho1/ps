@@ -1,4 +1,4 @@
-// KOL12025a
+// KOL12026a
 #include "mpi.h"
 #include <stdio.h>
 #define N 4
