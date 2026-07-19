@@ -6,7 +6,7 @@
 #define K 6
 #define M 8
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   int rank, size;
 
   MPI_Init(&argc, &argv);
@@ -48,10 +48,14 @@ int main(int argc, char *argv[]) {
   MPI_Type_contiguous(M, MPI_INT, &rowB);
   MPI_Type_commit(&rowB);
 
-  MPI_Scatter(&A[0][0], cols_per_proc, colA, locA, N * cols_per_proc, MPI_INT,
-              0, MPI_COMM_WORLD);
-  MPI_Scatter(&B[0][0], cols_per_proc, rowB, locB, M * cols_per_proc, MPI_INT,
-              0, MPI_COMM_WORLD);
+  MPI_Scatter(
+    &A[0][0], cols_per_proc, colA, locA, N * cols_per_proc, MPI_INT,
+    0, MPI_COMM_WORLD
+  );
+  MPI_Scatter(
+    &B[0][0], cols_per_proc, rowB, locB, M * cols_per_proc, MPI_INT,
+    0, MPI_COMM_WORLD
+  );
 
   int locC[N][M];
   memset(locC, 0, sizeof(locC));

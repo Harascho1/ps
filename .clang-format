@@ -1,0 +1,17 @@
+# Formater (indent, razmaci, poravnanje). CLion ima ugradjeni clang-format
+# engine, pa radi i bez sistemski instaliranog binarija.
+BasedOnStyle: LLVM
+Language: Cpp
+
+IndentWidth: 2
+ContinuationIndentWidth: 2
+TabWidth: 2
+UseTab: Never
+
+ColumnLimit: 70 
+PointerAlignment: Left          # forsira konvenciju:  type* name
+Cpp11BracedListStyle: true       # kompaktne viticaste: {.a = ...} bez razmaka
+AlignAfterOpenBracket: BlockIndent  # ugnezdjene strukture: clan uvucen za 2, ne poravnat uz zagradu
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
